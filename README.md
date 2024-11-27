@@ -59,7 +59,7 @@ Below is the system component diagram showing the key components and their inter
 
 - **Frontend**: The iOS and Web applications provide the user interface and interact with the backend.
 - **Backend**: Manages API calls, authentication, and routing requests to AI services.
-- **AI Tiers**: 
+- **AI Tiers**:
   - Local AI for lightweight tasks.
   - Custom LLM for mid-tier processing.
   - Third-Party AI for heavy computational tasks.
@@ -75,33 +75,147 @@ Below is the system component diagram showing the key components and their inter
 
 ## **User Flow**
 
-### **Screens**
+### 1. Login Screen
 
-1. **Login Screen**:
-   - GitHub OAuth login.
-   - Option to skip login for limited access.
-2. **Home Screen**:
-   - Displays trending topics and repositories.
-   - Search bar for exploring content.
-3. **Topics Screen**:
-   - Browse and search topics of interest.
-   - View repositories associated with a selected topic.
-4. **Repository Screen**:
-   - Detailed repository view, including metadata and stars.
-   - Option to add to a Nexus or open in the Code Viewer.
-5. **Code Viewer Screen**:
-   - Inline syntax highlighting.
-   - AI-driven code insights and suggestions.
-6. **Settings Screen**:
-   - Manage preferences, logout, and theme settings.
-7. **Learning Path Screen**:
-   - AI-curated study plan based on selected repositories.
+### Components:
+- Username/Email Input Field
+- Password Input Field
+- “Forgot Password?” Link
+- Login Button
+- OAuth Login Options (e.g., GitHub, Google)
 
-### **User Flow Diagram**
+### Layout:
+- **Header**: App Logo/Name centered at the top.
+- **Input Fields**: Vertically aligned for Username/Email and Password.
+- **Buttons**: Login button prominent below input fields, with OAuth options arranged horizontally or stacked.
+- **Footer**: “Forgot Password?” link below the login button.
 
-The following diagram outlines the flow between screens and system components.
+### Notes:
+- Include proper labels, error messages for validation.
+- Accessible tab navigation for all interactive elements.
 
-![User Flow Diagram](user_flow_diagram.png)
+---
+
+### 2. Home Screen
+
+### Purpose:
+Central hub for navigation.
+
+### Components:
+- **Dashboard**: Key stats like repositories, progress bars for learning paths.
+- **Navigation Menu**: Links to Topics, Repositories, Settings.
+- **Quick Access Tiles**: “Recently Viewed” or “Favorites” sections.
+
+### Layout:
+- **Header**: Navigation menu across the top.
+- **Body**: Main area divided into three sections:
+  - Left: Key stats dashboard.
+  - Center: Quick access tiles.
+  - Right: Additional recommendations or notifications.
+- **Footer**: Persistent bottom navigation for mobile views.
+
+### Notes:
+- Responsive design for seamless desktop and mobile transitions.
+
+---
+
+### 3. Topics Screen
+
+### Purpose:
+Browse and select learning or coding topics.
+
+### Components:
+- Search Bar
+- List/Grid of Topics: Icons and short descriptions for each topic.
+- Filtering Options: Dropdowns or toggles for difficulty and category.
+- Call-to-Action Buttons: “Start Learning,” “View Resources.”
+
+### Layout:
+- **Header**: Search bar with filtering options below it.
+- **Body**: Grid or list layout for topics with icons.
+- **Footer**: Fixed navigation.
+
+---
+
+### 4. Repository Screen
+
+### Purpose:
+Displays user-linked repositories.
+
+### Components:
+- Search Bar
+- List of Repositories: Metadata like stars, forks, last updated.
+- Tabs: “Private” and “Public” repositories.
+- Integration Options: Buttons for connecting/disconnecting GitHub or adding new repositories.
+
+### Layout:
+- **Header**: Tabs for repository type.
+- **Body**: Search bar above the list of repositories.
+- **Footer**: Persistent action buttons for integrations.
+
+---
+
+### 5. Code Viewer Screen
+
+### Purpose:
+View and analyze code files.
+
+### Components:
+- File Directory Tree: Positioned on the left.
+- Main Code Editor Area: Center with syntax highlighting.
+- Toolbar: Above editor for actions (Copy, Download, Comment).
+- AI Insights: Sidebar for “Run Code” or AI-generated suggestions.
+
+### Layout:
+- **Three-column design**:
+  - Left: File tree.
+  - Center: Code editor.
+  - Right: Toolbar and AI insights panel.
+- **Header**: Repository name and navigation breadcrumbs.
+
+---
+
+### 6. Learning Path Screen
+
+### Purpose:
+Track learning progress.
+
+### Components:
+- List of Learning Paths: Progress bars for each.
+- Recommendation Engine: Carousel or list for new paths.
+- Start New Path Button
+- Achievements Section: Badges or milestone display.
+
+### Layout:
+- **Header**: Search or filter for learning paths.
+- **Body**: Two-column layout:
+  - Left: Ongoing learning paths.
+  - Right: Recommendations or achievements.
+
+---
+
+### 7. Settings Screen
+
+### Purpose:
+Manage user preferences.
+
+### Components:
+- Profile Settings: Username, email, and avatar.
+- API Integrations: GitHub and third-party APIs.
+- Theme Toggle: Light/Dark mode switch.
+- Data Management: Options like clear cache, manage storage.
+
+### Layout:
+- **Header**: Tabs for different settings categories.
+- **Body**: Stacked settings options.
+- **Footer**: Save/Apply button.
+
+---
+
+### Cross-Screen Design Notes:
+- Consistent typography and spacing for visual harmony.
+- High contrast for accessibility.
+- Responsive layouts with mobile-first considerations.
 
 - **Login Flow**: Authenticates the user and sets up access tokens.
 - **Data Flow**: Screens communicate with the API Gateway to retrieve data from GitHub or AI services.
