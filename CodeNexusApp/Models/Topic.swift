@@ -1,2 +1,7 @@
+import Foundation
 
-// Topic.swift content here...
+struct Topic: Identifiable, Decodable {
+    let id: String
+    let name: String
+    let relevanceScore: Int
+}
